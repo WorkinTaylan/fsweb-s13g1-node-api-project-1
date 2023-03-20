@@ -2,11 +2,12 @@
 const express= require("express");
 
 const server = express();
-
+const cors=require("cors")
 const User=require("../api/users/model");
 
 
 server.use(express.json()); //json istekleri karşılamak için
+server.use(cors());
 
 server.post("/api/users", async(req, res)=>{
     try{
